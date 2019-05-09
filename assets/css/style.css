@@ -1,0 +1,16 @@
+body {
+    background-image: url("../images/bikes\ in\ kiosks.jpg");
+    background-size: cover;
+}
+
+.container {
+    opacity: .97;
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+.jumbotron {
+    margin-top: 30px;
+}
