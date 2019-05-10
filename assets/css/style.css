@@ -14,6 +14,7 @@ body {
 .contactus_background {
     background-image: none;
 }
+
 .container {
     font-family: 'Modak', cursive;
     opacity: .94;
@@ -44,7 +45,7 @@ body {
 
 .card-footer {
     text-decoration: none;
-    background-color: aliceblue;
+    background-color:white;
     text-align: center;
     position: fixed;
     bottom: 0;  
@@ -69,6 +70,29 @@ p, .about_me {
 
 .container {
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+.contactaboutme {
+    font-family: 'Modak', cursive;
+    text-align: center;
+    margin: 20px 30px;
+    font-size: 5em;
+    background-color: lightgoldenrodyellow;
+}
 
+.namecard {
+    border-radius: 16px;
+    background-color: lightgoldenrodyellow;
+    align-content: center;
+    align-items: center;
+    
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
