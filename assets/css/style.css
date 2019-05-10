@@ -6,13 +6,13 @@ font-family: 'Modak', cursive;
 ******************************/
 
 body {
-    /* background-image: url("../images/bikes\ in\ kiosks.jpg"); */
+    background-image: url("../images/bikes\ in\ kiosks.jpg");
+    /* background-image: url("../images/Minneapolis_on_Mississippi_River.jpg"); */
     background-size: cover;
    
 }
 
-.h1 {
-}
+
 .container {
     font-family: 'Modak', cursive;
     opacity: .96;
@@ -56,5 +56,10 @@ body {
 .card-footer, a {
     display: -moz-popup;
     font-family: 'Roboto Condensed', sans-serif; 
+}
+
+#beer {
+    height: 75px;
+    width: 75px;
 }
 
