@@ -11,6 +11,9 @@ body {
     background-size: cover;
 }
 
+.contactus_background {
+    background-image: none;
+}
 .container {
     font-family: 'Modak', cursive;
     opacity: .94;
@@ -57,4 +60,15 @@ body {
     height: 75px;
     width: 75px;
 }
+
+p, .about_me {
+    font-size: 1em;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.container {
+    margin: auto;
+}
+
 
