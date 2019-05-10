@@ -1,8 +1,8 @@
-let Breweries = [];
-
 $(document).ready(function() {
   let statusList;
   let infoList;
+
+  let combinedList = [];
 
   jQuery.ajaxPrefilter(function(options) {
     if (options.crossDomain && jQuery.support.cors) {
@@ -19,9 +19,9 @@ $(document).ready(function() {
 
   $.ajax(statusSettings)
     .then(function(response) {
-      console.log("response:");
+      //console.log("response:");
       statusList = response.data.stations;
-      console.log(statusList);
+      //console.log(statusList);
 
       let niceRideInfoURL =
         "https://gbfs.niceridemn.com/gbfs/es/station_information.json";
@@ -33,8 +33,26 @@ $(document).ready(function() {
 
       $.ajax(infoSettings)
         .then(function(response) {
-          infoList = response.data;
-          console.log(infoList);
+          infoList = response.data.stations;
+          //console.log(infoList);
+
+          for (let i = 0; i < infoList.length; i++) {
+            console.log(i);
+            let infoItem = infoList[i];
+            let statusItem = statusList[i];
+            let bikes = 0;
+            if (statusItem.num_bikes_available) {
+              bikes = statusItem.num_bikes_available;
+            }
+            console.log(statusItem);
+            combinedList.push({
+              id: infoItem.id,
+              lat: infoItem.lat,
+              lon: infoItem.lon,
+              num_bikes_available: bikes
+            });
+          }
+          console.log(combinedList);
         })
         .catch(function(error) {
           console.log(error);
