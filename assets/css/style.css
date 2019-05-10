@@ -6,7 +6,7 @@ font-family: 'Modak', cursive;
 ******************************/
 
 body {
-    /* background-image: url("../images/bikes\ in\ kiosks.jpg"); */
+    background-image: url("../images/bikesnbeers.jpg");
     background-size: cover;
 }
 
@@ -14,7 +14,7 @@ body {
 }
 .container {
     font-family: 'Modak', cursive;
-    opacity: .96;
+    opacity: .94;
     
 }
 
