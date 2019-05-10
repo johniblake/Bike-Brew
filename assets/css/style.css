@@ -9,13 +9,11 @@ body {
     background-image: url("../images/bikes\ in\ kiosks.jpg");
     /* background-image: url("../images/Minneapolis_on_Mississippi_River.jpg"); */
     background-size: cover;
-   
 }
 
 .container {
     font-family: 'Modak', cursive;
     opacity: .94;
-    
 }
 
 .card {
@@ -34,7 +32,6 @@ body {
 
 .form-control, .btn {
     font-family: 'Roboto Condensed', sans-serif; 
-
 }
 
 .card-header {
