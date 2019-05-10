@@ -20,7 +20,7 @@ $(document).ready(function() {
   $.ajax(statusSettings)
     .then(function(response) {
       console.log("response:");
-      statusList = response.data;
+      statusList = response.data.stations;
       console.log(statusList);
 
       let niceRideInfoURL =
