@@ -79,20 +79,30 @@ p, .about_me {
 .contactaboutme {
     font-family: 'Modak', cursive;
     text-align: center;
-    margin: 20px 30px;
+    margin: 10px 20px;
     font-size: 5em;
-    background-color: lightgoldenrodyellow;
+    background-color: lightblue;
 }
 
 .namecard {
     border-radius: 16px;
-    background-color: lightgoldenrodyellow;
+    background-color: lightblue;
     align-content: center;
     align-items: center;
+    margin-top: 40px;
+
     
 }
 
 img {
     width: 200px;
     height: 200px;
+}
+
+.contactus {
+    font-family: 'Modak', cursive;
+    text-align: center;
+    margin: 10px 20px;
+    font-size: 5em;
+    background-color: lightblue;
 }
