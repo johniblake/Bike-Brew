@@ -28,6 +28,10 @@ font-family: 'Modak', cursive;
   opacity: 0.94;
 }
 
+.results {
+  opacity: 0.94;
+}
+
 .card {
   border-radius: 20px;
   margin-top: 40px;
