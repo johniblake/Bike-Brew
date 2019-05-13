@@ -1,5 +1,5 @@
-$("#search-btn").on("click", function (event) {
-    event.preventDefault();
+$("#search-btn").on("click", function(event) {
+  event.preventDefault();
 
     var qty = 5;
     var search = $("#search").val().trim();
@@ -24,15 +24,11 @@ $("#search-btn").on("click", function (event) {
             let newRow = $("<tr>").append(
                 $("<td>").text(breweryName),
                 $("<td>").text(breweryCity),
-                $("<td>").text(breweryStreet),
-
-                
+                $("<td>").text(breweryStreet), 
             );
             $("#search-table > tbody").append(newRow);
             };
-            console.log(breweryName, breweryLong, breweryLat),
-            console.log(breweryName, breweryCity, breweryStreet);
+            console.log(breweryName, breweryLong, breweryLat);
         }
     });
-
 });
