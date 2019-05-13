@@ -20,16 +20,17 @@ $("#search-btn").on("click", function (event) {
             let breweryStreet = response[i].street;
             let breweryLong = response[i].longitude;
             let breweryLat = response[i].latitude;
+            if (response[i].state === 'Minnesota'){
             let newRow = $("<tr>").append(
                 $("<td>").text(breweryName),
                 $("<td>").text(breweryCity),
                 $("<td>").text(breweryStreet),
 
-                console.log(breweryName, breweryLong, breweryLat),
+                
             );
             $("#search-table > tbody").append(newRow);
-
-
+            };
+            console.log(breweryName, breweryLong, breweryLat),
             console.log(breweryName, breweryCity, breweryStreet);
         }
     });
