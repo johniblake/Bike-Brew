@@ -7,14 +7,14 @@ $(document).ready(function() {
 
   function getLocation() {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(getClosestRack, showError);
+      navigator.geolocation.getCurrentPosition(getClosestRacks, showError);
     } else {
       x.innerHTML = "Geolocation is not supported by this browser.";
     }
   }
 
-  function getClosestRack(position) {
-    let closestRack = [Infinity, {}];
+  function getClosestRacks(position) {
+    let closestRacks = [[Infinity, {}], [Infinity, {}], [Infinity, {}]];
     myPosition = [position.coords.latitude, position.coords.longitude];
     for (bikeRack in combinedList) {
       let rack = combinedList[bikeRack];
@@ -24,13 +24,15 @@ $(document).ready(function() {
         rack.lat,
         rack.lon
       );
-      if (delta < closestRack[0]) {
-        closestRack = [delta, rack];
+      if (delta < closestRacks[0][0]) {
+        closestRacks[0] = [delta, rack];
+      } else if (delta < closestRacks[1][0]) {
+        closestRacks[1] = [delta, rack];
+      } else if (delta < closestRacks[2][0]) {
+        closestRacks[2] = [delta, rack];
       }
     }
-    console.log(closestRack[1]);
-    let distance = getMiles(closestRack[0]).toFixed(2);
-    console.log(distance + " miles away.");
+    console.log(closestRacks);
   }
 
   function showError(error) {
@@ -136,7 +138,7 @@ $(document).ready(function() {
     event.preventDefault();
     console.log("hi");
     getLocation();
-    getClosestRack(breweryPosition);
+    getClosestRacks(breweryPosition);
   });
 
   jQuery.ajaxPrefilter(function(options) {
