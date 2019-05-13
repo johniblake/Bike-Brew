@@ -26,13 +26,12 @@ font-family: 'Modak', cursive;
 .container {
   font-family: 'Modak', cursive;
   opacity: .94;
-
+  color: rgba(255, 115, 0, 0.911);
 }
 
 .card {
   border-radius: 20px;
   margin-top: 40px;
-
 }
 
 .btn {
@@ -44,20 +43,24 @@ font-family: 'Modak', cursive;
   font-size: 5em;
   margin-top: 30px;
   border-radius: 30px;
-
 }
-
 
 .form-control, .btn {
   font-family: 'Roboto Condensed', sans-serif; 
-
 }
 
 .card-header {
   text-align: center;
   font-size: 2.5em;
   border-radius: 30px;
+}
 
+.card-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  text-align: left;
 }
 
 .card-footer {
@@ -68,12 +71,12 @@ font-family: 'Modak', cursive;
   position: fixed;
   bottom: 0;  
   width: 100%;
- 
 }
 
 .card-footer, a {
   display: -moz-popup;
   font-family: 'Roboto Condensed', sans-serif; 
+
 }
 
 #beer {
@@ -83,20 +86,27 @@ font-family: 'Modak', cursive;
 
 p, .about_me {
   font-size: 1em;
-  text-align: center;
+  text-align: justify;
   font-family: 'Roboto Condensed', sans-serif;
+}
+
+.nametag {
+  font-size: 2em;
+  text-align: center;
+  color: black;
 }
 
 .disclosure {
   text-align: left; 
   padding: 25px;
+  color: black;
 }
 
 .contactaboutme {
   font-family: 'Modak', cursive;
   text-align: center;
   margin: 10px 20px;
-  font-size: 5em;
+  font-size: 6em;
   align-content: center;
   align-items: center;
 }
@@ -109,6 +119,6 @@ p, .about_me {
 
 
 img {
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
 }
