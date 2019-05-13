@@ -14,8 +14,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- Font Scripts -->
-  <link href="https://fonts.googleapis.com/css?family=Lato|Modak|Roboto+Condensed" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css?family=Lato|Modak|Roboto+Condensed" rel="stylesheet"
 </head>
 
 <body class="index-background">
@@ -26,10 +25,24 @@
       <p class="lead">Brewery to Bike Station!</p>
       <hr class="my-4">
       <form>
-        <input class="form-control" type="text" placeholder="Which Brewery?">
-        <button type="submit" class="btn btn-primary">Search</button>
+        <input class="form-control" type="text" placeholder="Which Brewery?" id="search">
+        <button type="submit" class="btn btn-primary" id="search-btn">Search</button>
       </form>
     </div>
+    <div class="card-body">
+      <table class="table" id="search-table">
+          <thead>
+              <tr>
+                  <th scope="col">Brewery Name</th>
+                  <th scope="col">City</th>
+                  <th scope="col">Street</th>
+              </tr>
+          </thead>
+          <tbody>
+             <!--Brewery search results inserted here-->
+          </tbody>
+      </table>
+  </div>
     <div class="card">
       <div class="card-header">
         Brew to Bike Stations
@@ -60,6 +73,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
+
 </body>
 
 </html>
