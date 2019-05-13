@@ -6,9 +6,9 @@ font-family: 'Modak', cursive;
 ******************************/
 
 .index-background {
-    background-image: url("../images/NiceRide_553a-2.jpg");
-    /* background-image: url("../images/Minneapolis_on_Mississippi_River.jpg"); */
-    background-size: cover;
+  background-image: url("../images/NiceRide_553a-2.jpg");
+  /* background-image: url("../images/Minneapolis_on_Mississippi_River.jpg"); */
+  background-size: cover;
 }
 
 .team-background {
@@ -24,15 +24,13 @@ font-family: 'Modak', cursive;
 }
 
 .container {
-  font-family: 'Modak', cursive;
-  opacity: .94;
-
+  font-family: "Modak", cursive;
+  opacity: 0.94;
 }
 
 .card {
   border-radius: 20px;
   margin-top: 40px;
-
 }
 
 .btn {
@@ -40,40 +38,37 @@ font-family: 'Modak', cursive;
 }
 
 .jumbotron {
-  font-family: 'Modak', cursive;
+  font-family: "Modak", cursive;
   font-size: 5em;
   margin-top: 30px;
   border-radius: 30px;
-
 }
 
-
-.form-control, .btn {
-  font-family: 'Roboto Condensed', sans-serif; 
-
+.form-control,
+.btn {
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 .card-header {
   text-align: center;
   font-size: 2.5em;
   border-radius: 30px;
-
 }
 
 .card-footer {
   text-decoration: none;
   color: orange;
-  background-color:white;
+  background-color: white;
   text-align: center;
   position: fixed;
-  bottom: 0;  
+  bottom: 0;
   width: 100%;
- 
 }
 
-.card-footer, a {
+.card-footer,
+a {
   display: -moz-popup;
-  font-family: 'Roboto Condensed', sans-serif; 
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 #beer {
@@ -81,19 +76,20 @@ font-family: 'Modak', cursive;
   width: 75px;
 }
 
-p, .about_me {
+p,
+.about_me {
   font-size: 1em;
   text-align: center;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 .disclosure {
-  text-align: left; 
+  text-align: left;
   padding: 25px;
 }
 
 .contactaboutme {
-  font-family: 'Modak', cursive;
+  font-family: "Modak", cursive;
   text-align: center;
   margin: 10px 20px;
   font-size: 5em;
@@ -107,8 +103,11 @@ p, .about_me {
   margin-top: 40px;
 }
 
-
 img {
   width: 200px;
   height: 200px;
+}
+
+.brewery-row {
+  cursor: pointer;
 }
