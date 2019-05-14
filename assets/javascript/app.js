@@ -181,20 +181,17 @@ $(document).ready(function() {
     $(".results").css("display", "none");
     $(".directions").css("display", "block");
   });
-
-  $.ajaxPrefilter(function(options) {
-    if (options.crossDomain && jQuery.support.cors) {
-      options.url = "https://ca329482.herokuapp.com/" + options.url;
-    }
-  });
-
+  const headers = {
+    //Origin: "https://ca329482.herokuapp.com/"
+  };
   let niceRideStatusURL =
     "https://gbfs.niceridemn.com/gbfs/en/station_status.json";
   var statusSettings = {
     host: "gbfs.niceridemn.com",
     url: niceRideStatusURL,
     method: "GET",
-    type: "application/json"
+    type: "application/json",
+    headers
   };
 
   $.ajax(statusSettings)
@@ -209,7 +206,8 @@ $(document).ready(function() {
         host: "gbfs.niceridemn.com",
         url: niceRideInfoURL,
         method: "GET",
-        type: "application/json"
+        type: "application/json",
+        headers
       };
 
       $.ajax(infoSettings)
