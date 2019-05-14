@@ -9,12 +9,12 @@
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-database.js"></script>
   <link rel="stylesheet" href="assets/css/style.css">
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <!-- Font Scripts -->
-  <link href="https://fonts.googleapis.com/css?family=Lato|Modak|Roboto+Condensed" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Modak|Roboto+Condensed" rel="stylesheet" />
 </head>
 
 <body class="index-background">
@@ -25,35 +25,46 @@
       <p class="lead">Brewery to Bike Station!</p>
       <hr class="my-4">
       <form>
-        <input class="form-control" type="text" placeholder="Which Brewery?" id="search">
-        <button type="submit" class="btn btn-primary" id="search-btn">Search</button>
+        <input class="form-control" type="text" placeholder="Search a Minneapolis Brewery" id="search">
+        <button type="submit" class="btn btn-primary" id="search-btn"><i class="fas fa-search"></i>Search</button>
       </form>
     </div>
-    <div class="card-body">
+    <div class="card results">
       <table class="table" id="search-table">
-          <thead>
-              <tr>
-                  <th scope="col">Brewery Name</th>
-                  <th scope="col">City</th>
-                  <th scope="col">Street</th>
-              </tr>
-          </thead>
-          <tbody>
-             <!--Brewery search results inserted here-->
-          </tbody>
+        <thead>
+          <th scope="col">Brewery Name</th>
+          <th scope="col">City</th>
+          <th scope="col">Street</th>
+        </thead>
+        <tbody>
+          <!--Brewery search results inserted here-->
+        </tbody>
       </table>
-  </div>
-    <div class="card">
-      <div class="card-header">
+    </div>
+    <div class="card-body">
+      <div class="card-header text-center">
 
-        Brew to Bike Station
       </div>
-      <div class="card-body">
-        <div class="row">
-        
+      <div class="row">
+        <div class="col-6">
+          <div class="card-header text-center">
+            Bikes Near Me:
+          </div>
+          <div class="row">
+
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card-header text-center">
+            Bikes Near Brewery:
+          </div>
+          <div class="row">
+
+          </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
 
   <footer>
@@ -74,7 +85,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="./assets/javascript/app.js"></script>
 </body>
 
 </html>
