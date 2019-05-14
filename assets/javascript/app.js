@@ -87,7 +87,6 @@ $(document).ready(function() {
 
   function displayResults(type, results) {
     let resultsDiv = $("<div>");
-    resultsDiv.addClass("brewery");
     for (result in results) {
       let row = $("<div>");
       let rowName = $("<div>");
