@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   let statusList;
   let infoList;
   let myPosition;
@@ -64,7 +64,7 @@ $(document).ready(function() {
       (Math.cos((lat1 * Math.PI) / 180) *
         Math.cos((lat2 * Math.PI) / 180) *
         (1 - Math.cos(dLon))) /
-        2;
+      2;
     let distance = R * 2 * Math.asin(Math.sqrt(a));
     //console.log(distance);
     return distance;
@@ -114,7 +114,7 @@ $(document).ready(function() {
     }
   }
 
-  $("#search-btn").on("click", function(event) {
+  $("#search-btn").on("click", function (event) {
     event.preventDefault();
     $(".results").css("display", "block");
     $(".directions").css("display", "none");
@@ -136,7 +136,7 @@ $(document).ready(function() {
         "X-RapidAPI-Host": "brianiswu-open-brewery-db-v1.p.rapidapi.com",
         "X-RapidAPI-Key": "1d5eb5e604msh86709b1c7a83dbbp1fe08cjsnfd778179a7e0"
       }
-    }).then(function(response) {
+    }).then(function (response) {
       $("#search-table tbody").empty();
       for (var i = 0; i < qty; i++) {
         let breweryName = response[i].name;
@@ -161,7 +161,7 @@ $(document).ready(function() {
     });
   });
 
-  $(document).on("click", ".brewery-row", function(event) {
+  $(document).on("click", ".brewery-row", function (event) {
     let val = $(this)
       .val()
       .split(" ");
@@ -183,7 +183,7 @@ $(document).ready(function() {
     $(".directions").css("display", "block");
   });
 
-  $.ajaxPrefilter(function(options) {
+  $.ajaxPrefilter(function (options) {
     if (options.crossDomain && jQuery.support.cors) {
       options.url = "https://ca329482.herokuapp.com/" + options.url;
     }
@@ -199,7 +199,7 @@ $(document).ready(function() {
   };
 
   $.ajax(statusSettings)
-    .then(function(response) {
+    .then(function (response) {
       //console.log("response:");
       statusList = response.data.stations;
       //console.log(statusList);
@@ -214,7 +214,7 @@ $(document).ready(function() {
       };
 
       $.ajax(infoSettings)
-        .then(function(response) {
+        .then(function (response) {
           infoList = response.data.stations;
           //console.log(infoList);
 
@@ -237,11 +237,11 @@ $(document).ready(function() {
           }
         })
         .done(console.log("Got bikes!"))
-        .catch(function(error) {
+        .catch(function (error) {
           console.log(error);
         });
     })
-    .catch(function(error) {
+    .catch(function (error) {
       console.log(error);
     });
 });

@@ -121,16 +121,23 @@ p,
   font-family: "Roboto Condensed", sans-serif;
 }
 
+.nametag {
+  font-size: 2em;
+  text-align: center;
+  color: black;
+}
+
 .disclosure {
   text-align: left;
   padding: 25px;
+  color: black;
 }
 
 .contactaboutme {
   font-family: "Modak", cursive;
   text-align: center;
   margin: 10px 20px;
-  font-size: 5em;
+  font-size: 6em;
   align-content: center;
   align-items: center;
 }
@@ -142,8 +149,8 @@ p,
 }
 
 img {
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
 }
 
 .brewery-row {
