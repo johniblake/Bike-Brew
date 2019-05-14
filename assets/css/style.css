@@ -27,8 +27,37 @@ font-family: 'Modak', cursive;
   font-family: "Modak", cursive;
   opacity: 0.94;
 }
-
+.content-container {
+  margin-bottom: 100px;
+}
 .results {
+  display: none;
+  opacity: 0.94;
+}
+
+.loading {
+  height: 100px;
+  width: 100px;
+}
+
+.my-loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.brewery-loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.directions {
+  display: none;
   opacity: 0.94;
 }
 
