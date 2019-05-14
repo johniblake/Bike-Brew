@@ -13,7 +13,7 @@ $(document).ready(function() {
     }
   }
 
-  function getClosestRacks(position) {
+  function getClosestRacks(position, type = "user") {
     let closestRacks = [[Infinity, {}], [Infinity, {}], [Infinity, {}]];
     myPosition = [position.coords.latitude, position.coords.longitude];
     for (bikeRack in combinedList) {
@@ -33,6 +33,8 @@ $(document).ready(function() {
       }
     }
     console.log(closestRacks);
+
+    displayResults(type, closestRacks);
   }
 
   function showError(error) {
@@ -83,9 +85,43 @@ $(document).ready(function() {
     }
   }
 
+  function displayResults(type, results) {
+    let resultsDiv = $("<div>");
+    resultsDiv.addClass("brewery");
+    for (result in results) {
+      let row = $("<div>");
+      let rowName = $("<div>");
+      let rowDetails = $("<div>");
+      row.addClass("result-row");
+      rowName.html(results[result][1].name);
+      rowDetails.append(
+        getMiles(results[result][0]).toFixed(2) + " miles away. "
+      );
+      rowDetails.append(
+        "bikes available: " + results[result][1].num_bikes_available
+      );
+      row.append(rowName);
+      row.append(rowDetails);
+      resultsDiv.append(row);
+
+      if (type === "brewery") {
+        $(".brewery-loading-container").css("display", "none");
+        $(".brewery-results").html(resultsDiv);
+      } else {
+        $(".my-loading-container").css("display", "none");
+        $(".my-results").html(resultsDiv);
+      }
+    }
+  }
+
   $("#search-btn").on("click", function(event) {
     event.preventDefault();
-
+    $(".results").css("display", "block");
+    $(".directions").css("display", "none");
+    $(".my-results").html("");
+    $(".brewery-results").html("");
+    $(".my-loading-container").css("display", "flex");
+    $(".brewery-loading-container").css("display", "flex");
     var qty = 5;
     var search = $("#search")
       .val()
@@ -108,17 +144,19 @@ $(document).ready(function() {
         let breweryStreet = response[i].street;
         let breweryLong = response[i].longitude;
         let breweryLat = response[i].latitude;
-        let newRow = $("<tr>").append(
-          $("<td>").text(breweryName),
-          $("<td>").text(breweryCity),
-          $("<td>").text(breweryStreet)
-        );
-        newRow.val(breweryLat + " " + breweryLong);
-        newRow.addClass("brewery-row");
-        $("#search-table > tbody").append(newRow);
+        if (response[i].state === "Minnesota") {
+          let newRow = $("<tr>").append(
+            $("<td>").text(breweryName),
+            $("<td>").text(breweryCity),
+            $("<td>").text(breweryStreet)
+          );
+          newRow.val(breweryLat + " " + breweryLong);
+          newRow.attr("id", breweryName);
+          newRow.addClass("brewery-row");
+          $("#search-table > tbody").append(newRow);
 
-        console.log(breweryName, breweryLong, breweryLat);
-        console.log(breweryName, breweryCity, breweryStreet);
+          console.log(breweryName, breweryLong, breweryLat);
+        }
       }
     });
   });
@@ -128,6 +166,7 @@ $(document).ready(function() {
       .val()
       .split(" ");
 
+    $(".brewery-name").html($(this).attr("id"));
     let breweryPosition = {
       coords: {
         latitude: val[0],
@@ -137,15 +176,19 @@ $(document).ready(function() {
     console.log(breweryPosition);
     event.preventDefault();
     console.log("hi");
+    getClosestRacks(breweryPosition, "brewery");
     getLocation();
-    getClosestRacks(breweryPosition);
+
+    $(".results").css("display", "none");
+    $(".directions").css("display", "block");
   });
 
-  jQuery.ajaxPrefilter(function(options) {
+  $.ajaxPrefilter(function(options) {
     if (options.crossDomain && jQuery.support.cors) {
       options.url = "https://ca329482.herokuapp.com/" + options.url;
     }
   });
+
   let niceRideStatusURL =
     "https://gbfs.niceridemn.com/gbfs/en/station_status.json";
   var statusSettings = {
