@@ -40,6 +40,10 @@ font-family: 'Modak', cursive;
   opacity: 0.94;
 }
 
+.my-results {
+  padding-left: 30px;
+}
+
 .loading {
   height: 100px;
   width: 100px;
