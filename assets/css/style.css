@@ -23,6 +23,10 @@ font-family: 'Modak', cursive;
   background-size: cover;
 }
 
+.about-content {
+  margin-bottom: 100px;
+}
+
 .container {
   font-family: "Modak", cursive;
   opacity: 0.94;
@@ -33,6 +37,8 @@ font-family: 'Modak', cursive;
 }
 .result-row {
   font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2rem;
+  margin: 15px;
 }
 
 .results {
@@ -40,8 +46,21 @@ font-family: 'Modak', cursive;
   opacity: 0.94;
 }
 
-.my-results {
-  padding-left: 30px;
+.result-row-name {
+  font-weight: bold;
+}
+.result-row-details {
+  font-size: 0.8em;
+  color: black;
+}
+
+.bikes {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 30px;
+  padding-top: 10px;
 }
 
 .loading {
@@ -63,6 +82,10 @@ font-family: 'Modak', cursive;
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+
+.brewery-name {
+  font-weight: bold;
 }
 
 .directions {
