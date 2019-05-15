@@ -93,12 +93,14 @@ $(document).ready(function() {
       let rowDetails = $("<div>");
       row.addClass("result-row");
       rowName.html(results[result][1].name);
+      rowName.addClass("result-row-name");
       rowDetails.append(
         getMiles(results[result][0]).toFixed(2) + " miles away. "
       );
       rowDetails.append(
         "bikes available: " + results[result][1].num_bikes_available
       );
+      rowDetails.addClass("result-row-details");
       row.append(rowName);
       row.append(rowDetails);
       resultsDiv.append(row);
