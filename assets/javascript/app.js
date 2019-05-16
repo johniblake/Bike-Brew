@@ -3,6 +3,9 @@ $(document).ready(function() {
   let infoList;
   let myPosition;
 
+  var bikeStart = [];
+  var bikeEnd = [];
+
   let combinedList = [];
 
   function getLocation() {
@@ -24,16 +27,31 @@ $(document).ready(function() {
         rack.lat,
         rack.lon
       );
-      if (delta < closestRacks[0][0]) {
+      
+      if (type === "user" && delta < closestRacks[0][0] && rack.num_bikes_available > 0) {
         closestRacks[0] = [delta, rack];
-      } else if (delta < closestRacks[1][0]) {
+      } else if (type === "user" && delta < closestRacks[1][0] && rack.num_bikes_available > 0) {
         closestRacks[1] = [delta, rack];
-      } else if (delta < closestRacks[2][0]) {
+      } else if (type === "user" && delta < closestRacks[2][0] && rack.num_bikes_available > 0) {
+        closestRacks[2] = [delta, rack];
+      } else if (type === "brewery" && delta < closestRacks[0][0]) {
+        closestRacks[0] = [delta, rack];
+      } else if (type === "brewery" && delta < closestRacks[1][0]) {
+        closestRacks[1] = [delta, rack];
+      } else if (type === "brewery" && delta < closestRacks[2][0]) {
         closestRacks[2] = [delta, rack];
       }
     }
     console.log(closestRacks);
-
+    console.log("Rack closest to user: ", closestRacks[0][1].lat, closestRacks[0][1].lon, closestRacks[0][1].name, closestRacks[0][1].num_bikes_available);
+    
+    if (type === "brewery"){
+      bikeEnd = [closestRacks[0][1].lat, closestRacks[0][1].lon];
+    } else{
+      bikeStart = [closestRacks[0][1].lat, closestRacks[0][1].lon];
+    };
+    console.log("bikeStart: ",bikeStart);
+    console.log("bikeEnd: ", bikeEnd);
     displayResults(type, closestRacks);
   }
 
@@ -177,7 +195,6 @@ $(document).ready(function() {
     console.log("hi");
     getClosestRacks(breweryPosition, "brewery");
     getLocation();
-
     $(".results").css("display", "none");
     $(".directions").css("display", "block");
   });
